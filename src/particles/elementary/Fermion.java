@@ -26,4 +26,9 @@ public class Fermion extends ElementaryParticle {
 	public void setFermionType(FermionType type) {
 		this.fermionType = type;
 	}
+
+	@Override
+	public String toString() {
+		return super.toString() + " > " + fermionType.toString();
+	}
 }

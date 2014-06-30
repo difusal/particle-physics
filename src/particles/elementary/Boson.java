@@ -26,4 +26,9 @@ public class Boson extends ElementaryParticle {
 	public void setBosonType(BosonType bosonType) {
 		this.bosonType = bosonType;
 	}
+
+	@Override
+	public String toString() {
+		return super.toString() + " > " + bosonType.toString();
+	}
 }

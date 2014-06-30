@@ -23,4 +23,9 @@ public class ElementaryParticle extends Particle {
 	public void setElementaryParticleType(ElementaryParticleType type) {
 		this.elementaryParticleType = type;
 	}
+
+	@Override
+	public String toString() {
+		return super.toString() + " > " + elementaryParticleType.toString();
+	}
 }
