@@ -1,7 +1,8 @@
-package particles.elementary.fermions;
+package particles.elementary;
 
-import particles.elementary.ElementaryParticle;
-import particles.elementary.ElementaryParticleType;
+import particles.ElementaryParticle;
+import particles.ElementaryParticleType;
+
 
 public class Fermion extends ElementaryParticle {
 	private static final ElementaryParticleType TYPE = ElementaryParticleType.FERMION;

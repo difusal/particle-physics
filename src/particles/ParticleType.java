@@ -1,5 +1,5 @@
 package particles;
 
 public enum ParticleType {
-	ELEMENTARY, SUBATOMIC
+	ELEMENTARY, COMPOSITE
 }

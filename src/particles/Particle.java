@@ -37,6 +37,6 @@ public class Particle {
 	@Override
 	public String toString() {
 		return "Name: " + name + "\nDescription: " + description
-				+ "\nParticle Type:" + particleType;
+				+ "\nParticle Type: " + particleType;
 	}
 }

@@ -1,7 +1,8 @@
-package particles.elementary.fermions.quarks;
+package particles.elementary.fermions;
 
-import particles.elementary.fermions.Fermion;
-import particles.elementary.fermions.FermionType;
+import particles.elementary.Fermion;
+import particles.elementary.FermionType;
+
 
 public class Quark extends Fermion {
 	private static final FermionType TYPE = FermionType.QUARK;

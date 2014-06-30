@@ -1,4 +1,4 @@
-package particles.elementary.fermions;
+package particles.elementary;
 
 public enum FermionType {
 	QUARK, LEPTON

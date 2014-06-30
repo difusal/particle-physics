@@ -1,7 +1,5 @@
-package particles.elementary;
+package particles;
 
-import particles.Particle;
-import particles.ParticleType;
 
 public class ElementaryParticle extends Particle {
 	private static final ParticleType TYPE = ParticleType.ELEMENTARY;

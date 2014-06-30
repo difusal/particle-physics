@@ -1,9 +1,7 @@
 package cli;
 
-import java.util.Scanner;
-
+import particles.Loader;
 import particles.Particle;
-import logic.Loader;
 
 public class Launcher {
 	public static void main(String[] args) {
@@ -22,8 +20,7 @@ public class Launcher {
 		scanner.close();
 		*/
 		
-		System.out.println("Quarks:\n");
-		for (Particle p : Loader.getQuarks())
+		for (Particle p : Loader.getLeptons())
 			System.out.println(p + "\n");
 	}
 }
