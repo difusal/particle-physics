@@ -1,15 +1,13 @@
 package particles.elementary.fermions.leptons;
 
+import database.Database;
 import particles.elementary.fermions.Lepton;
 
 public class Electron extends Lepton {
-	private static final String NAME = "electron";
-	private static final String MASS = "0.510998928(11) MeV/c^2";
-	private static final String CHARGE = "-1";
-	private static final String SPIN = "1/2";
-	private static final String DESCRIPTION = "";
+	private static final int ID = 0;
 
 	public Electron() {
-		super(NAME, MASS, CHARGE, SPIN, DESCRIPTION);
+		super();
+		loadAttributes(ID, Database.LEPTONS_DB);
 	}
 }

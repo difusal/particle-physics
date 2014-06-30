@@ -8,6 +8,11 @@ public class Fermion extends ElementaryParticle {
 
 	private FermionType fermionType;
 
+	public Fermion() {
+		super();
+		setElementaryParticleType(TYPE);
+	}
+
 	public Fermion(String name, String mass, String charge, String spin,
 			FermionType type, String description) {
 		super(name, mass, charge, spin, TYPE, description);

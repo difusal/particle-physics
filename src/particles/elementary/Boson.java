@@ -8,6 +8,11 @@ public class Boson extends ElementaryParticle {
 
 	private BosonType bosonType;
 
+	public Boson() {
+		super();
+		setElementaryParticleType(TYPE);
+	}
+
 	public Boson(String name, String mass, String charge, String spin,
 			BosonType type, String description) {
 		super(name, mass, charge, spin, TYPE, description);

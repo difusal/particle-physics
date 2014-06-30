@@ -1,10 +1,24 @@
 package particles;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.Charset;
+
+import database.Database;
+
 public class Particle {
 	private String name;
 	private String mass, charge, spin;
 	private ParticleType particleType;
 	private String description;
+
+	public Particle() {
+		super();
+	}
 
 	public Particle(String name, String mass, String charge, String spin,
 			ParticleType type, String description) {
@@ -64,9 +78,61 @@ public class Particle {
 		this.description = description;
 	}
 
+	public void loadAttributes(int ID, String database) {
+		try {
+			String name = "";
+			String mass = "", charge = "", spin = "";
+			String description = "";
+
+			InputStream fis = new FileInputStream(database);
+			BufferedReader br = new BufferedReader(new InputStreamReader(fis,
+					Charset.forName("UTF-8")));
+
+			String line;
+			while ((line = br.readLine()) != null) {
+				int readID = -1;
+
+				try {
+					readID = Integer.parseInt(line);
+				} catch (NumberFormatException e) {
+				}
+
+				if (readID == ID) {
+					name = br.readLine();
+					mass = br.readLine();
+					charge = br.readLine();
+					spin = br.readLine();
+					description = br.readLine();
+
+					break;
+				} else {
+					for (int i = 0; i < Database.LINES_PER_ELEM; i++)
+						br.readLine();
+				}
+			}
+
+			setAttributes(name, mass, charge, spin, description);
+
+			br.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	protected void setAttributes(String name, String mass, String charge,
+			String spin, String description) {
+		this.setName(name);
+		this.setMass(mass);
+		this.setCharge(charge);
+		this.setSpin(spin);
+		this.setDescription(description);
+	}
+
 	@Override
 	public String toString() {
-		return "Name: " + name + "\tMass: " + mass + "\tCharge: " + charge
-				+ "\tSpin: " + spin + "\tParticle Type: " + particleType;
+		return "Name: " + name + "\nMass: " + mass + "\nCharge: " + charge
+				+ "\nSpin: " + spin + "\nParticle Type: " + particleType;
 	}
 }

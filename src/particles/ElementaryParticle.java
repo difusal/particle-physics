@@ -5,6 +5,11 @@ public class ElementaryParticle extends Particle {
 
 	private ElementaryParticleType elementaryParticleType;
 
+	public ElementaryParticle() {
+		super();
+		setParticleType(TYPE);
+	}
+
 	public ElementaryParticle(String name, String mass, String charge,
 			String spin, ElementaryParticleType type, String description) {
 		super(name, mass, charge, spin, TYPE, description);
