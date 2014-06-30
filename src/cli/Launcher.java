@@ -20,7 +20,7 @@ public class Launcher {
 		scanner.close();
 		*/
 		
-		for (Particle p : Loader.getLeptons())
+		for (Particle p : Loader.getElementaryParticles())
 			System.out.println(p + "\n");
 	}
 }

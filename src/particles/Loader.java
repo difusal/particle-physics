@@ -2,6 +2,11 @@ package particles;
 
 import java.util.ArrayList;
 
+import particles.elementary.bosons.HiggsBoson;
+import particles.elementary.bosons.gaugebosons.Gluon;
+import particles.elementary.bosons.gaugebosons.Photon;
+import particles.elementary.bosons.gaugebosons.WBoson;
+import particles.elementary.bosons.gaugebosons.ZBoson;
 import particles.elementary.fermions.leptons.Electron;
 import particles.elementary.fermions.leptons.ElectronNeutrino;
 import particles.elementary.fermions.leptons.Muon;
@@ -16,7 +21,31 @@ import particles.elementary.fermions.quarks.TopQuark;
 import particles.elementary.fermions.quarks.UpQuark;
 
 public class Loader {
-	private static ArrayList<Particle> quarks, leptons;
+	private static ArrayList<Particle> elementaryParticles;
+	private static ArrayList<Particle> fermions, bosons;
+	private static ArrayList<Particle> quarks, leptons, gaugeBosons;
+
+	public static ArrayList<Particle> getElementaryParticles() {
+		if (elementaryParticles == null) {
+			elementaryParticles = new ArrayList<Particle>();
+
+			elementaryParticles.addAll(getFermions());
+			elementaryParticles.addAll(getBosons());
+		}
+
+		return elementaryParticles;
+	}
+
+	public static ArrayList<Particle> getFermions() {
+		if (fermions == null) {
+			fermions = new ArrayList<Particle>();
+
+			fermions.addAll(getQuarks());
+			fermions.addAll(getLeptons());
+		}
+
+		return fermions;
+	}
 
 	public static ArrayList<Particle> getQuarks() {
 		if (quarks == null) {
@@ -50,5 +79,29 @@ public class Loader {
 		}
 
 		return leptons;
+	}
+
+	public static ArrayList<Particle> getBosons() {
+		if (bosons == null) {
+			bosons = new ArrayList<Particle>();
+
+			bosons.addAll(getGaugeBosons());
+			bosons.add(new HiggsBoson());
+		}
+
+		return bosons;
+	}
+
+	public static ArrayList<Particle> getGaugeBosons() {
+		if (gaugeBosons == null) {
+			gaugeBosons = new ArrayList<Particle>();
+
+			gaugeBosons.add(new Gluon());
+			gaugeBosons.add(new Photon());
+			gaugeBosons.add(new ZBoson());
+			gaugeBosons.add(new WBoson());
+		}
+
+		return gaugeBosons;
 	}
 }

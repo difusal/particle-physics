@@ -3,14 +3,14 @@ package particles.elementary;
 import particles.ElementaryParticle;
 import particles.ElementaryParticleType;
 
-
 public class Fermion extends ElementaryParticle {
 	private static final ElementaryParticleType TYPE = ElementaryParticleType.FERMION;
 
 	private FermionType fermionType;
 
-	public Fermion(String name, String description, FermionType type) {
-		super(name, description, TYPE);
+	public Fermion(String name, String mass, String charge, String spin,
+			FermionType type, String description) {
+		super(name, mass, charge, spin, TYPE, description);
 		this.setFermionType(type);
 	}
 
