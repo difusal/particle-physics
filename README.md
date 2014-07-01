@@ -2,6 +2,12 @@ particle-physics
 ================
 
 WIP. Still thinking what could possibly come out of all this.
+***
+Particle UML:  
+![image](http://i.imgur.com/tNQq1xl.jpg)
+
+Elementary Particle UML:  
+![image](http://i.imgur.com/alPzoQA.jpg)
 
 ***
 Current result of a simple:
