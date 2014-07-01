@@ -7,7 +7,8 @@ WIP. Still thinking what could possibly come out of all this.
 <p align="center">
 <img src="http://i.imgur.com/tNQq1xl.jpg">
 </p>
-####Elementary Particle UML:  
+
+####Elementary Particle UML:
 <p align="center">
 <img src="http://i.imgur.com/alPzoQA.jpg">
 </p>
