@@ -4,13 +4,15 @@ particle-physics
 WIP. Still thinking what could possibly come out of all this.
 ***
 <p align="center">
-Particle UML:  
+Particle UML:
+<br/>
 <img src="http://i.imgur.com/tNQq1xl.jpg">
-
+<br/>
 Elementary Particle UML:  
+<br/>
 <img src="http://i.imgur.com/alPzoQA.jpg">
+<br/>
 </p>
-
 ***
 Current result of a simple:
 ```
