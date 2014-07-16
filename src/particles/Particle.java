@@ -11,10 +11,10 @@ import java.nio.charset.Charset;
 import database.Database;
 
 public class Particle {
-	private String name;
-	private String mass, charge, spin;
-	private ParticleType particleType;
-	private String description;
+	protected String name;
+	protected String mass, charge, spin;
+	protected ParticleType particleType;
+	protected String description;
 
 	public Particle() {
 		super();
