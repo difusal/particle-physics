@@ -8,8 +8,6 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.Charset;
 
-import database.Database;
-
 public class Particle {
 	protected String name;
 	protected String mass, charge, spin;
@@ -88,6 +86,8 @@ public class Particle {
 			BufferedReader br = new BufferedReader(new InputStreamReader(fis,
 					Charset.forName("UTF-8")));
 
+			int linesPerElem = Loader.loadLinesPerElement(br);
+
 			String line;
 			while ((line = br.readLine()) != null) {
 				int readID = -1;
@@ -103,10 +103,11 @@ public class Particle {
 					charge = br.readLine();
 					spin = br.readLine();
 					description = br.readLine();
+					br.readLine();
 
 					break;
 				} else {
-					for (int i = 0; i < Database.LINES_PER_ELEM; i++)
+					for (int i = 0; i < linesPerElem; i++)
 						br.readLine();
 				}
 			}
